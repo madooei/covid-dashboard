@@ -10,7 +10,11 @@ import { useEffect, useState } from "react";
 import type { CountryData } from "@/types/country";
 import { fetchCountries } from "@/services/countries";
 
-const SelectCountry = () => {
+type SelectCountryProps = {
+  setCountryCode: (code: string | null) => void;
+};
+
+const SelectCountry = ({ setCountryCode }: SelectCountryProps) => {
   const [country, setCountry] = useState<CountryData | null>(null);
   const [countryData, setCountryData] = useState<CountryData[]>([]);
 
@@ -21,6 +25,7 @@ const SelectCountry = () => {
   const handleOnCountryChange = (value: string) => {
     const selected = countryData.find((c) => c.code === value);
     setCountry(selected!);
+    setCountryCode(value);
   };
 
   return (
