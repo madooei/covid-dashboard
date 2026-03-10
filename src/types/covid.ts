@@ -43,4 +43,5 @@ export interface CovidData {
   confirmed: number;
   active: number;
   recovered: number;
+  deaths: number;
 }

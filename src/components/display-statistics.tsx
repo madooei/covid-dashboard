@@ -4,7 +4,12 @@ import { useEffect, useState } from "react";
 import type { CovidData } from "@/types/covid";
 import { fetchCovidData } from "@/services/disease";
 
-const STATISTICS: (keyof CovidData)[] = ["confirmed", "active", "recovered"];
+const STATISTICS: (keyof CovidData)[] = [
+  "confirmed",
+  "active",
+  "recovered",
+  "deaths",
+];
 
 type DisplayStatisticsProps = {
   countryCode: string | null;

@@ -24,5 +24,6 @@ export async function fetchCovidData(countryCode: string): Promise<CovidData> {
     confirmed: data.cases,
     active: data.active,
     recovered: data.recovered,
+    deaths: data.deaths,
   };
 }
